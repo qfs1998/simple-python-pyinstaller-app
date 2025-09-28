@@ -1,12 +1,16 @@
 pipeline{
-    agent {
-        docker { image 'mdsol/python2'}
-    }
+    agent any
     stages{
         stage('Build'){
             steps{
-                sh 'python -m py_compile sources/add2vals.py sources/calc.py'
-                stash(name: 'compiled-results', includes: 'sources/*.py*')
+                sh 'echo Build hello'
+                sh 'echo Build world'
+            }
+        }
+        stage("Test"){
+            steps{
+                sh 'echo Test hello'
+                sh 'echo Test world'
             }
         }
     }
