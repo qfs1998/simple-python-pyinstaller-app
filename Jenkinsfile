@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent {
+        docker { image 'mdsol/python2'}
+    }
     stages{
         stage('Build'){
             steps{
