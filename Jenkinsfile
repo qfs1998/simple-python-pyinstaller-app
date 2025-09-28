@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                sh 'echo Build hello'
-                sh 'echo Build world'
+                sh 'cd ~ && echo Build hello > hello_jenkins.txt'
             }
         }
         stage("Test"){
